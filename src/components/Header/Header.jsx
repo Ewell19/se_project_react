@@ -18,7 +18,7 @@ function Header({ onAddClick, weatherData }) {
         + Add Clothes
       </button>
       <div className="header__user-container">
-        <p className="header__username">Adam Ewell</p>
+        <p className="header__user-name">Adam Ewell</p>
         <img src={avatar} alt="Avatar" className="header__avatar" />
       </div>
     </header>

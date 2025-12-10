@@ -1,7 +1,7 @@
 import "./WeatherCard.css";
 
 function WeatherCard({ weatherData }) {
-  const getWeatherImage = () => {
+  const getWeatherClassName = () => {
     if (!weatherData) return "";
 
     const { weather, isDay } = weatherData;
@@ -18,7 +18,7 @@ function WeatherCard({ weatherData }) {
   };
 
   return (
-    <section className={`weather-card ${getWeatherImage()}`}>
+    <section className={`weather-card ${getWeatherClassName()}`}>
       <p className="weather-card__temp">{weatherData?.temperature}°F</p>
       <p className="weather-card__condition">
         {weatherData?.weather &&
