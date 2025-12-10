@@ -22,7 +22,9 @@ WTWR is a responsive React application that helps users decide what to wear base
 - **OpenWeatherMap API**: Real-time weather data
 - **Git & GitHub**: Version control and deployment
 
-`
+## link to website
+
+https://Ewell19.github.io/se_project_react/.
 
 ## Future Enhancements
 
