@@ -5,16 +5,20 @@
   max-width: 498px;
 }
 
+/* White close button specifically for image modal variant */
+.modal__content_type_image .modal__close {
+  filter: invert(1);
+}
+
 .modal__image {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   display: block;
 }
 
 .modal__footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 20px 32px;
   background-color: #fff;
   border-radius: 0 0 20px 20px;

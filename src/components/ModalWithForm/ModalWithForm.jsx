@@ -4,21 +4,21 @@ import "./ModalWithForm.css";
 function ModalWithForm({
   children,
   title,
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={`modal-title-${name}`}
   buttonText,
-  name,
-  isOpen,
-  onClose,
-  onSubmit,
-}) {
-  useEffect(() => {
-    if (!isOpen) return;
+      <div className="modal__content">
+        <h2 id={`modal-title-${name}`} className="modal__title">{title}</h2>
+        <button
+          className="modal__close"
+          type="button"
+          aria-label="Close modal"
+          onClick={onClose}
+        ></button>
 
-    const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
     };
-
+          <button className="modal__submit" type="submit" aria-label={buttonText}>
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
