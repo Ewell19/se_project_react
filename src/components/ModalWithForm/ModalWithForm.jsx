@@ -4,21 +4,21 @@ import "./ModalWithForm.css";
 function ModalWithForm({
   children,
   title,
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={`modal-title-${name}`}
   buttonText,
-      <div className="modal__content">
-        <h2 id={`modal-title-${name}`} className="modal__title">{title}</h2>
-        <button
-          className="modal__close"
-          type="button"
-          aria-label="Close modal"
-          onClick={onClose}
-        ></button>
+  name,
+  isOpen,
+  onClose,
+  onSubmit,
+}) {
+  useEffect(() => {
+    if (!isOpen) return;
 
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
     };
-          <button className="modal__submit" type="submit" aria-label={buttonText}>
+
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
@@ -33,17 +33,27 @@ function ModalWithForm({
     <div
       className={`modal modal_type_${name} ${isOpen ? "modal_opened" : ""}`}
       onClick={handleOverlay}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={`modal-title-${name}`}
     >
       <div className="modal__content">
-        <h2 className="modal__title">{title}</h2>
+        <h2 id={`modal-title-${name}`} className="modal__title">
+          {title}
+        </h2>
         <button
           className="modal__close"
           type="button"
+          aria-label="Close modal"
           onClick={onClose}
         ></button>
         <form className="modal__form" name={name} onSubmit={onSubmit}>
           {children}
-          <button className="modal__submit" type="submit">
+          <button
+            className="modal__submit"
+            type="submit"
+            aria-label={buttonText}
+          >
             {buttonText}
           </button>
         </form>
