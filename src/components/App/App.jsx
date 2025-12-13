@@ -28,6 +28,19 @@ function App() {
     setSelectedCard(card);
   };
 
+  const handleAddGarment = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const newItem = {
+      _id: Date.now().toString(),
+      name: formData.get("name"),
+      link: formData.get("imageUrl"),
+      weather: formData.get("weather"),
+    };
+    setClothingItems([...clothingItems, newItem]);
+    handleCloseModal();
+  };
+
   useEffect(() => {
     getWeather()
       .then((data) => {
@@ -61,8 +74,49 @@ function App() {
         name="add-garment"
         isOpen={activeModal === "add-garment"}
         onClose={handleCloseModal}
+        onSubmit={handleAddGarment}
       >
-        {/* Form inputs will go here in future sprints */}
+        <label className="modal__label">
+          Name
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            className="modal__input"
+          />
+        </label>
+        <label className="modal__label">
+          Image
+          <input
+            type="url"
+            name="imageUrl"
+            placeholder="Image URL"
+            required
+            className="modal__input"
+          />
+        </label>
+        <fieldset className="modal__fieldset">
+          <legend className="modal__legend">Select the weather type:</legend>
+          <label className="modal__radio-label">
+            <input
+              type="radio"
+              name="weather"
+              value="hot"
+              defaultChecked
+              required
+            />
+            Hot
+          </label>
+          <label className="modal__radio-label">
+            <input type="radio" name="weather" value="warm" required />
+            Warm
+          </label>
+          <label className="modal__radio-label">
+            <input type="radio" name="weather" value="cold" required />
+            Cold
+          </label>
+        </fieldset>
       </ModalWithForm>
       <ItemModal
         isOpen={activeModal === "preview"}

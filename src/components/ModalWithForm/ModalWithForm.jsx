@@ -38,24 +38,28 @@ function ModalWithForm({
       aria-labelledby={`modal-title-${name}`}
     >
       <div className="modal__content">
-        <h2 id={`modal-title-${name}`} className="modal__title">
-          {title}
-        </h2>
-        <button
-          className="modal__close"
-          type="button"
-          aria-label="Close modal"
-          onClick={onClose}
-        ></button>
-        <form className="modal__form" name={name} onSubmit={onSubmit}>
-          {children}
+        <div className="modal__header">
+          <h2 id={`modal-title-${name}`} className="modal__title">
+            {title}
+          </h2>
           <button
-            className="modal__submit"
-            type="submit"
-            aria-label={buttonText}
-          >
-            {buttonText}
-          </button>
+            className="modal__close"
+            type="button"
+            aria-label="Close modal"
+            onClick={onClose}
+          ></button>
+        </div>
+        <form className="modal__form" name={name} onSubmit={onSubmit}>
+          <div className="modal__body">{children}</div>
+          <footer className="modal__footer">
+            <button
+              className="modal__submit"
+              type="submit"
+              aria-label={buttonText}
+            >
+              {buttonText}
+            </button>
+          </footer>
         </form>
       </div>
     </div>
