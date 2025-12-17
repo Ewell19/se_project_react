@@ -17,7 +17,7 @@ The project automatically deploys to GitHub Pages when changes are pushed to the
 2. Removes any CNAME files to prevent custom domain conflicts
 3. Deploys to the `gh-pages` branch
 
-The deployed site is available at: **https://ewell19.github.io/se_project_react/**
+The deployed site is available at: **https://Ewell19.github.io/se_project_react/**
 
 ### Manual Deployment
 To deploy manually from your local machine:
@@ -58,7 +58,7 @@ If the site redirects to an incorrect domain (e.g., `aeweather119.github.io`):
 
 4. **Verify deployment:**
    - Check that the GitHub Actions workflow completed successfully
-   - Visit the site at: https://ewell19.github.io/se_project_react/
+   - Visit the site at: https://Ewell19.github.io/se_project_react/
 
 ### Changes Not Appearing
 If new changes aren't reflected on the deployed site:
@@ -66,4 +66,4 @@ If new changes aren't reflected on the deployed site:
 1. Verify the workflow ran successfully in the "Actions" tab
 2. Wait 2-5 minutes for GitHub Pages to update
 3. Clear your browser cache
-4. Check that you're accessing the correct URL: https://ewell19.github.io/se_project_react/
+4. Check that you're accessing the correct URL: https://Ewell19.github.io/se_project_react/
