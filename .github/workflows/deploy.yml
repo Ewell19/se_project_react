@@ -28,6 +28,8 @@ jobs:
         run: npm run build
         
       - name: Remove any CNAME file from build
+        # Prevents GitHub Pages from using a custom domain
+        # A CNAME file can cause redirects to incorrect domains
         run: rm -f dist/CNAME
         
       - name: Deploy to GitHub Pages
