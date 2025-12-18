@@ -27,8 +27,9 @@ export const getWeather = () => {
 };
 
 const parseWeatherData = (data) => {
-  const temperature = Math.round(data.main.temp);
-  const weather = getWeatherCondition(temperature);
+  const temperatureF = Math.round(data.main.temp);
+  const temperatureC = Math.round((temperatureF - 32) * (5 / 9));
+  const weather = getWeatherCondition(temperatureF);
   const city = data.name;
 
   // Determine if it's day or night based on sunrise/sunset times
@@ -38,7 +39,10 @@ const parseWeatherData = (data) => {
   const isDay = currentTime >= sunrise && currentTime < sunset;
 
   return {
-    temperature,
+    temperature: {
+      F: temperatureF,
+      C: temperatureC,
+    },
     weather,
     city,
     isDay,

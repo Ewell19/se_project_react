@@ -5,6 +5,11 @@ function ItemCard({ item, onCardClick }) {
     onCardClick(item);
   };
 
+  const handleImageError = (e) => {
+    e.target.src =
+      "https://via.placeholder.com/328x328?text=Image+Not+Available";
+  };
+
   return (
     <li className="card">
       <h2 className="card__name">{item.name}</h2>
@@ -13,6 +18,7 @@ function ItemCard({ item, onCardClick }) {
         alt={item.name}
         className="card__image"
         onClick={handleCardClick}
+        onError={handleImageError}
       />
     </li>
   );

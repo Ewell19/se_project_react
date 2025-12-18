@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import "./WeatherCard.css";
 
 function WeatherCard({ weatherData }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
   const getWeatherClassName = () => {
     if (!weatherData) return "";
 
@@ -17,9 +21,15 @@ function WeatherCard({ weatherData }) {
     return `weather-card_type_${weatherTypes[weather]}_${timeOfDay}`;
   };
 
+  const displayTemperature = weatherData?.temperature
+    ? weatherData.temperature[currentTemperatureUnit]
+    : "";
+
   return (
     <section className={`weather-card ${getWeatherClassName()}`}>
-      <p className="weather-card__temp">{weatherData?.temperature}°F</p>
+      <p className="weather-card__temp">
+        {displayTemperature}°{currentTemperatureUnit}
+      </p>
       <p className="weather-card__condition">
         {weatherData?.weather &&
           weatherData.weather.charAt(0).toUpperCase() +

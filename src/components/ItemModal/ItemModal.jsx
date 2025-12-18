@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./ItemModal.css";
 
-function ItemModal({ isOpen, onClose, card }) {
+function ItemModal({ isOpen, onClose, card, onDeleteCard }) {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -21,6 +21,18 @@ function ItemModal({ isOpen, onClose, card }) {
     }
   };
 
+  const handleDelete = () => {
+    if (onDeleteCard && card) {
+      onDeleteCard(card);
+      onClose();
+    }
+  };
+
+  const handleImageError = (e) => {
+    e.target.src =
+      "https://via.placeholder.com/498x498?text=Image+Not+Available";
+  };
+
   if (!card) return null;
 
   return (
@@ -34,10 +46,24 @@ function ItemModal({ isOpen, onClose, card }) {
           type="button"
           onClick={onClose}
         ></button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img
+          src={card.link}
+          alt={card.name}
+          className="modal__image"
+          onError={handleImageError}
+        />
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>
+          {onDeleteCard && (
+            <button
+              className="modal__delete-btn"
+              type="button"
+              onClick={handleDelete}
+            >
+              Delete item
+            </button>
+          )}
         </div>
       </div>
     </div>

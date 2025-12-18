@@ -34,9 +34,28 @@
 }
 
 .modal__weather {
-  margin: 0;
+  margin: 0 0 16px 0;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 20px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__delete-btn {
+  padding: 12px 0;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: left;
+}
+
+.modal__delete-btn:hover {
+  color: rgba(255, 0, 0, 0.8);
 }
