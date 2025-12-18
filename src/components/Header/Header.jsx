@@ -10,13 +10,21 @@ function Header({ onAddClick, weatherData }) {
     day: "numeric",
   });
 
+  const currentDateShort = new Date().toLocaleString("default", {
+    month: "short",
+    day: "numeric",
+  });
+
   return (
     <header className="header">
       <Link to="/" className="header__logo-link">
         <img src={logo} alt="Logo" className="header__logo" />
       </Link>
       <p className="header__date-and-location">
-        <span className="header__date">{currentDate}</span>
+        <span className="header__date header__date--full">{currentDate}</span>
+        <span className="header__date header__date--short">
+          {currentDateShort}
+        </span>
         <span className="header__city">
           {weatherData?.city || "Loading..."}
         </span>

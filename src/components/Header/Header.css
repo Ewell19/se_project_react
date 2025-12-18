@@ -26,6 +26,10 @@
   white-space: nowrap;
 }
 
+.header__date--short {
+  display: none;
+}
+
 .header__city {
   white-space: nowrap;
   overflow: hidden;
@@ -93,6 +97,75 @@
 
   .header__city {
     max-width: 40vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__date--full {
+    display: none;
+  }
+
+  .header__date--short {
+    display: inline;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo controls"
+      "date controls"
+      "user user";
+    row-gap: 12px;
+    padding: 16px;
+  }
+
+  .header__logo-link {
+    grid-area: logo;
+  }
+
+  .header__date-and-location {
+    grid-area: date;
+    min-width: 0;
+  }
+
+  .header__controls {
+    grid-area: controls;
+    justify-self: end;
+    gap: 10px;
+  }
+
+  .header__user-link {
+    grid-area: user;
+    margin-left: 0;
+    margin-right: 0;
+    justify-self: end;
+    display: none;
+  }
+
+  .header__city {
+    max-width: 50vw;
+  }
+
+  .header__add-clothes-btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 14px 12px;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .header__controls {
+    gap: 8px;
+  }
+
+  .header__add-clothes-btn {
+    font-size: 16px;
   }
 }
 

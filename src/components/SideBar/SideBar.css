@@ -40,11 +40,18 @@
 @media (max-width: 768px) {
   .sidebar {
     max-width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
   .sidebar__user {
-    flex-direction: row;
+    flex-direction: column;
     gap: 16px;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   .sidebar__avatar {
@@ -54,5 +61,7 @@
 
   .sidebar__name {
     font-size: 16px;
+    width: auto;
+    height: auto;
   }
 }
