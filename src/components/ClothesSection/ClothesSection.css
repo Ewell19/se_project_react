@@ -53,13 +53,23 @@
 
 @media (max-width: 768px) {
   .clothes-section__header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .clothes-section__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .clothes-section__add-btn {
-    align-self: stretch;
-    text-align: center;
+    align-self: auto;
+    text-align: left;
+    white-space: nowrap;
   }
 
   .clothes-section__list {
