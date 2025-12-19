@@ -45,13 +45,7 @@
   }
 
   .sidebar__user {
-    flex-direction: column;
-    gap: 16px;
-    width: auto;
-    height: auto;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
+    display: none;
   }
 
   .sidebar__avatar {
