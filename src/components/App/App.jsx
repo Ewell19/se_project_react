@@ -45,11 +45,11 @@ function App() {
   const handleAddItem = (item) => {
     addItem({
       name: item.name,
-      link: item.imageUrl,
+      imageUrl: item.imageUrl,
       weather: item.weather,
     })
       .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+        setClothingItems((prev) => [newItem, ...prev]);
         handleCloseModal();
       })
       .catch((err) => {
@@ -66,8 +66,8 @@ function App() {
     if (cardToDelete) {
       deleteItem(cardToDelete._id)
         .then(() => {
-          setClothingItems(
-            clothingItems.filter((item) => item._id !== cardToDelete._id)
+          setClothingItems((prev) =>
+            prev.filter((item) => item._id !== cardToDelete._id)
           );
           handleCloseModal();
           setShowDeleteConfirm(false);

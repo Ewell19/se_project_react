@@ -82,13 +82,13 @@
       "name": "boots",
       "link": "https://assets.timberland.com/images/t_img/f_auto,h_650,e_sharpen:60,w_650/dpr_2.0/v1718951472/TB110361713-ALT4/Womens-Timberland-Premium-6Inch-Waterproof-Boot.png",
       "weather": "cold",
-      "_id": 17
+      "_id": 18
     },
     {
-      "name": "boots",
-      "link": "https://assets.timberland.com/images/t_img/f_auto,h_650,e_sharpen:60,w_650/dpr_2.0/v1718951472/TB110361713-ALT4/Womens-Timberland-Premium-6Inch-Waterproof-Boot.png",
-      "weather": "cold",
-      "_id": 18
+      "name": "cap",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6eApDvjJyEivlUMZ_NX9E5EcwscSwMzUZTQ&s",
+      "weather": "hot",
+      "_id": 19
     }
   ]
 }

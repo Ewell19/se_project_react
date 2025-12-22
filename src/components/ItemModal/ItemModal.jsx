@@ -47,7 +47,7 @@ function ItemModal({ isOpen, onClose, card, onDeleteCard }) {
           onClick={onClose}
         ></button>
         <img
-          src={card.link}
+          src={card.imageUrl || card.link}
           alt={card.name}
           className="modal__image"
           onError={handleImageError}

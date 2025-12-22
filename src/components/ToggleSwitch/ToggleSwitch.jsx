@@ -22,11 +22,8 @@ function ToggleSwitch() {
       const rect = labelRef.current.getBoundingClientRect();
       const distance = Math.abs(e.clientX - startX);
 
-      // If it's a simple click (minimal drag distance), just toggle
-      if (distance < 5) {
-        handleToggleSwitchChange();
-      } else {
-        // For drag, determine based on final position
+      // Only handle drag behavior if there was significant movement
+      if (distance >= 5) {
         const endX = e.clientX - rect.left;
         const midpoint = rect.width / 2;
         const isCurrentlyC = currentTemperatureUnit === "C";
@@ -56,6 +53,13 @@ function ToggleSwitch() {
     }
   };
 
+  const handleCheckboxChange = () => {
+    // Only toggle if not dragging (prevents double toggle on drag+click)
+    if (!isDragging) {
+      handleToggleSwitchChange();
+    }
+  };
+
   return (
     <div className="toggle-switch">
       <label
@@ -70,8 +74,7 @@ function ToggleSwitch() {
           type="checkbox"
           className="toggle-switch__checkbox"
           checked={currentTemperatureUnit === "C"}
-          readOnly
-          style={{ pointerEvents: "none" }}
+          onChange={handleCheckboxChange}
         />
         <span className="toggle-switch__text toggle-switch__text_f">F</span>
         <span className="toggle-switch__text toggle-switch__text_c">C</span>
