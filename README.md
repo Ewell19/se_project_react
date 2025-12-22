@@ -1,14 +1,43 @@
-# React + Vite
+# WTWR (What to Wear?)
 
-**Live demo:** [https://Ewell19.github.io/se_project_react/]
-**recording video** [https://www.loom.com/share/85ea96b375c14d7091ab7c1a6e857e87]
+**Live demo:** [https://Ewell19.github.io/se_project_react/](https://Ewell19.github.io/se_project_react/)  
+**Recording video:** [https://www.loom.com/share/85ea96b375c14d7091ab7c1a6e857e87](https://www.loom.com/share/85ea96b375c14d7091ab7c1a6e857e87)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
+WTWR (What to Wear?) is a weather-based clothing recommendation application built with React. The app fetches real-time weather data and suggests appropriate clothing items based on the current temperature and weather conditions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
+
+- **Real-time Weather Data**: Displays current temperature in Fahrenheit or Celsius
+- **Clothing Recommendations**: Shows clothing items suited for hot, warm, or cold weather
+- **Add New Items**: Users can add their own clothing items with image URLs
+- **Delete Items**: Remove clothing items with a confirmation modal
+- **Temperature Toggle**: Switch between Fahrenheit and Celsius units
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **User Profile**: View and manage your clothing collection
+
+## How to Use
+
+1. **View Weather**: The homepage displays the current weather and recommended clothing items
+2. **Toggle Temperature Units**: Click the temperature switch in the header to toggle between °F and °C
+3. **Add Clothing Items**:
+   - Click the "+ Add clothes" button in the header
+   - Enter the item name, image URL, and select the weather type (hot/warm/cold)
+   - Click "Add garment" to save
+4. **View Your Profile**: Click "Profile" in the header to see all your clothing items
+5. **Delete Items**:
+   - Click on any clothing card to view details
+   - Click "Delete item" button
+   - Confirm deletion in the modal
+
+## Technology Stack
+
+- **React 18** - UI framework
+- **React Router DOM** - Client-side routing
+- **Vite** - Build tool and dev server
+- **OpenWeatherMap API** - Weather data
+- **JSON Server** - Mock REST API for development
 
 ## Deployment
 
